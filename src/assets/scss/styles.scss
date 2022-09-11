@@ -1,0 +1,7 @@
+@use 'fonts';
+@use 'globals';
+@import 'variables';
+@import 'mixins';
+//components
+@import 'components/buttons';
+@import 'components/header';

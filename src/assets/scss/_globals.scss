@@ -1,0 +1,53 @@
+html{
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+:root{
+    --font-family-base: 'Poppins', sans-serif;
+    --font-family-alt: 'Frank Ruhl Libre', serif;
+    --primary-color: #F14216;
+    --secondary-color: #552D10;
+    --body-text-color: #232323;
+    --body-bg-color: #F9F5F2;
+}
+body{
+    margin: 0;
+    background-color: var(--body-bg-color);
+    font-family: var(--font-family-base);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--body-text-color);
+}
+button{
+   font-family: inherit; 
+   border: none;
+   cursor: pointer;
+}
+
+h1, 
+h2,
+h3{
+    font-family: var(--font-family-alt);
+    font-weight: 900;
+}
+h1, 
+h2,
+h3,
+p{
+    margin-top: 0;
+}
+a{
+    color: inherit;
+}
+img,
+svg{
+    vertical-align: middle;
+}

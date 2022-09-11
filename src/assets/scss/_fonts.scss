@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Regular'),
+        local('Poppins-Regular'),
+        url('./../fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Bold'),
+        local('Poppins-Bold'),
+        url('./../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins Black'),
+        local('Poppins-Black'),
+        url('./../fonts/Poppins-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Frank Ruhl Libre';
+    src: local('FrankRuhlLibre Bold'),
+        local('FrankRuhlLibre-Bold'),
+        url('./../fonts/FrankRuhlLibre-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Frank Ruhl Libre';
+    src: local('FrankRuhlLibre Black'),
+        local('FrankRuhlLibre-Black'),
+        url('./../fonts/FrankRuhlLibre-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+

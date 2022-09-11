@@ -1,0 +1,12 @@
+//bootstrap breakpoints: 768px, 992px, 1200px
+$breakpoints-up: (
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+);
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
