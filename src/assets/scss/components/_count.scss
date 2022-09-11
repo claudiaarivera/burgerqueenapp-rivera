@@ -1,0 +1,19 @@
+.count{
+    $size: 15px;
+    position: relative;
+    &__num{
+        position: absolute;
+        bottom: -($size / 2);
+        right: -($size / 3);
+        width: $size;
+        height: $size;
+        background-color: var(--primary-color);
+        color: #FFFFFF;
+        border-radius: 50%;
+        font-size: 0.625rem;
+        font-weight: 900;
+        line-height: $size;
+        text-align: center;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    }
+}

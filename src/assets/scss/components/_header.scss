@@ -1,6 +1,6 @@
 
 .header{
-    height: $height-header;
+    //height: $height-header;
     padding: 20px 0;
 }
 .nav{
@@ -21,8 +21,15 @@
     &__list{
         margin: 0;
         padding: 0;
+        &:first-of-type{
+            margin-bottom: 20px;
+            @include breakpoint('sm'){
+                margin-bottom: 0;
+            }
+        }
         @include breakpoint('sm'){
             display: flex;
+            align-items: center;
             justify-content: center;
             flex-wrap: wrap;
         }
@@ -35,7 +42,9 @@
     &__item{
         list-style: none;
         &:not(:last-child){
+            margin-bottom: 10px;
             @include breakpoint('sm'){
+                margin-bottom: 0;
                 margin-right: 28px;
             }
         }
@@ -73,6 +82,11 @@
                     bottom: -10px;
                 }
             }
+        }
+        &--cart{
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
         }
     }
 }

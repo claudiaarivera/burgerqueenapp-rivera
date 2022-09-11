@@ -26,19 +26,28 @@
     font-display: swap;
 }
 @font-face {
-    font-family: 'Frank Ruhl Libre';
-    src: local('FrankRuhlLibre Bold'),
-        local('FrankRuhlLibre-Bold'),
-        url('./../fonts/FrankRuhlLibre-Bold.ttf') format('truetype');
+    font-family: 'RobotoSlab';
+    src: local('RobotoSlab Bold'),
+        local('RobotoSlab-Bold'),
+        url('./../fonts/RobotoSlab-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: 'Frank Ruhl Libre';
-    src: local('FrankRuhlLibre Black'),
-        local('FrankRuhlLibre-Black'),
-        url('./../fonts/FrankRuhlLibre-Black.ttf') format('truetype');
+    font-family: 'RobotoSlab';
+    src: local('RobotoSlab ExtraBold'),
+        local('RobotoSlab-ExtraBold'),
+        url('./../fonts/RobotoSlab-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'RobotoSlab';
+    src: local('RobotoSlab Black'),
+        local('RobotoSlab-Black'),
+        url('./../fonts/RobotoSlab-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
     font-display: swap;

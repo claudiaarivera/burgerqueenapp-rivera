@@ -1,4 +1,5 @@
 import logo from './../assets/images/logo.png';
+import CartWidget from './CartWidget';
 const categories = ['Hamburguesas', 'Bebidas', 'Ensaladas', 'Complementos', 'Postres'];
 
 export function NavBar() {
@@ -21,6 +22,9 @@ export function NavBar() {
           <ul className='nav__list'>
             <li className='nav__item'>
               <a className='button button--primary' href="">Ingresar</a>
+            </li>
+            <li className='nav__item'>
+              <CartWidget count={1}/>
             </li>
           </ul>
         </nav>
