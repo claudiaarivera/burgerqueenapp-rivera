@@ -1,5 +1,6 @@
-import ItemListContainer from './components/ItemListContainer';
+
 import { NavBar } from './components/NavBar';
+import ItemListContainer from './components/products/ItemListContainer';
 
 export default function BurgerQueenApp() {
   return (
