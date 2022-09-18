@@ -1,10 +1,12 @@
+@use "sass:math";
+
 .count{
     $size: 15px;
     position: relative;
     &__num{
         position: absolute;
-        bottom: -($size / 2);
-        right: -($size / 3);
+        bottom: - math.div($size,2);
+        right:- math.div($size, 3);
         width: $size;
         height: $size;
         background-color: var(--primary-color);

@@ -1,20 +1,42 @@
 .button{
+    $self: &;
     display: inline-block;
     background-color: transparent;
+    text-align: center;
     padding: 10px 18px;
     border: 2px solid transparent;
     font-weight: 700;
     border-radius: 25px;
-    
+    &:disabled{
+        cursor: not-allowed;
+    }
+    &:not(:last-child){
+        margin-right: 5px;
+    }
     @at-root a#{ & }{
         text-decoration: none;
     }
     &--primary{
         border-color: var(--primary-color);
-        color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: #FFFFFF;
     }
     &--secondary{}
     &--outline{
-        
+        @at-root #{$self}--primary#{&}{
+            background-color: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        &:disabled{
+            border-color: var(--default-color);
+            color: var(--default-color);
+        }
+    }
+    &--icon-only{
+        border-radius: 50%;
+        padding: 0;
+        width: 25px;
+        height: 25px;
     }
 }

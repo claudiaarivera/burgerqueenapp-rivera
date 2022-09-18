@@ -16,6 +16,7 @@ html, body{
     --secondary-color: #552D10;
     --body-text-color: #232323;
     --body-bg-color: #F9F5F2;
+    --default-color: #a9a9a9;
 }
 body{
     margin: 0;
@@ -50,4 +51,11 @@ a{
 img,
 svg{
     vertical-align: middle;
+}
+.w-100{
+    width: 100%;
+}
+img{
+    max-width: 100%;
+    height: auto;
 }

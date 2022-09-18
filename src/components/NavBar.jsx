@@ -21,7 +21,7 @@ export function NavBar() {
           </ul>
           <ul className='nav__list'>
             <li className='nav__item'>
-              <a className='button button--primary' href="">Ingresar</a>
+              <a className='button button--primary button--outline' href="">Ingresar</a>
             </li>
             <li className='nav__item'>
               <CartWidget count={1}/>
