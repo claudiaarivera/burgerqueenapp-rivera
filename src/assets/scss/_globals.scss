@@ -14,6 +14,7 @@ html, body{
     --font-family-alt: 'RobotoSlab',cursive, serif;
     --primary-color: #F14216;
     --secondary-color: #552D10;
+    --secondary-15-color: rgba(85, 45, 16, .15);
     --body-text-color: #232323;
     --body-bg-color: #F9F5F2;
     --default-color: #a9a9a9;
@@ -58,4 +59,7 @@ svg{
 img{
     max-width: 100%;
     height: auto;
+}
+.text-center{
+    text-align: center;
 }

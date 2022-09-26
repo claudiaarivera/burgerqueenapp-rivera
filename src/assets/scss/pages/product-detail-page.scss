@@ -1,0 +1,46 @@
+.product-detail-page{
+    &__top-info{
+        border-bottom: 2px solid var(--secondary-15-color);
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    &__img{
+        max-width: 400px;
+        width: 100%;
+        margin: auto;
+        display: block;
+        border-radius: 10px;
+    }
+    &__title{
+        max-width: 275px;
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+    &__price{
+        font-size: 1.5rem;
+    }
+    &__fav-btn{
+        font-size: 1.5rem;
+        padding: 0 8px;
+        transition: transform 0.2s ease-in;
+        color: var(--primary-color);
+        &:active{
+            transform: scale(0.8);
+        }
+    }
+    &__available-tag{
+        color: var(--primary-color);
+        > span{
+            vertical-align: middle;
+            font-weight: 600;
+            font-size: 0.8125rem;
+        }
+    }
+    &__description{
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+    }
+    &__nutrition-facts{
+        font-size: 0.875rem;
+    }
+}

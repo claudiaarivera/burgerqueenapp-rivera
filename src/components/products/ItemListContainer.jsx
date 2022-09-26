@@ -3,20 +3,27 @@ import { getProducts } from "../../services/api";
 import { ItemList } from "./ItemList";
 
 export default function ItemListContainer({ greeting }) {
+  const [isLoading, setisLoading] = useState(false);
   const [productList, setProductList] = useState([]);
   useEffect(() => {
+    setisLoading(true);
     getProducts().then((products)=>{
+      setisLoading(false);
       setProductList(products);
-      console.log(products)
     })
   }, []);
   
   return (
     <>
       <h1 className="title">{ greeting }</h1>
-      <section>
-        <ItemList products={productList}/>
-      </section>
+      
+      {
+        isLoading ? 
+          <div className="spinner"></div> :
+          <section>
+            <ItemList products={productList}/>
+          </section>
+      }
       
     </>
   )

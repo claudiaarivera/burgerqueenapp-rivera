@@ -15,10 +15,10 @@ export const ItemCount = ({initialValue = 1, stock = 8 }) => {
   
   return (
     <div className='d-flex justify-content-center justify-content-md-start align-items-center'>
-      <button disabled={count === 1} className="button button--primary button--outline button--icon-only" onClick={handleRemove}>
+      <button disabled={count === 1} className="button button--primary button--outline button--icon-only me-0" onClick={handleRemove}>
         <FaMinus />
       </button>
-      <span className='mx-2'>{ count }</span>
+      <span className='mx-3'>{ count }</span>
       <button disabled={count >= stock} className="button button--primary button--outline button--icon-only" onClick={handleAdd}>
         <BsPlusLg />
       </button>

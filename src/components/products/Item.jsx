@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 //import classicBurger from '../assets/images/PngItem_39479.png';
-import { ItemCount } from '../ItemCount';
 
-export const Item = ({name, price, stock, img}) => {
+export const Item = ({name, price, stock, img, id}) => {
   const handleAddToCart = ()=>{
     alert('Tu combo ha sido añadido al carrito 🔥🍔');
   }
@@ -15,14 +15,7 @@ export const Item = ({name, price, stock, img}) => {
       <h2 className='product-card__title'>{name}</h2>
       <p className='product-card__price'>S/. {price}</p>
       <div className='product-card__footer'>
-        <div className='row align-items-center justify-content-center'>
-          <div className='col-12 col-md-5'>
-            <ItemCount initialValue={1} stock={stock}/>
-          </div>
-          <div className='col'>
-            <button className='button button--primary d-block w-100' onClick={handleAddToCart}>Agregar al carrito</button>
-          </div>
-        </div>
+        <Link to={`hamburguesas/${id}`} className='button button--primary d-block w-100'>Ver más</Link>
       </div>
     </div>
    </article> 

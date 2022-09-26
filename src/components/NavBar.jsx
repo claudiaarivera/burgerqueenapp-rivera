@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from './../assets/images/logo.png';
 import CartWidget from './CartWidget';
 const categories = ['Hamburguesas', 'Bebidas', 'Ensaladas', 'Complementos', 'Postres'];
@@ -7,9 +8,9 @@ export function NavBar() {
     <header className="header">
       <div className="container">
         <nav className="nav">
-          <a className='nav__brand-link' href="">
+          <Link className='nav__brand-link' to="/">
             <img className="nav__logo" src={logo} alt="" />
-          </a>
+          </Link>
           <ul className="nav__list">
             {
               categories.map((category, i) =>(

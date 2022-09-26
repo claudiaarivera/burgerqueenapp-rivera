@@ -9,6 +9,15 @@
 }
 @font-face {
     font-family: 'Poppins';
+    src: local('Poppins SemiBold'),
+        local('Poppins-SemiBold'),
+        url('./../fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Poppins';
     src: local('Poppins Bold'),
         local('Poppins-Bold'),
         url('./../fonts/Poppins-Bold.ttf') format('truetype');

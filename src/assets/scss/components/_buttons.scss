@@ -8,6 +8,7 @@
     font-weight: 700;
     border-radius: 25px;
     &:disabled{
+        opacity: 0.8;
         cursor: not-allowed;
     }
     &:not(:last-child){
