@@ -1,9 +1,10 @@
 import { products } from "../data/products";
 
-export const getProducts = () => {
+export const getProducts = (category) => {
   return new Promise((res)=>{
     setTimeout(() => {
-      res(products);
+      const productList = products.filter((product)=> category ? product.category === category : product);
+      res(productList);
     }, 1500);
   })
 }

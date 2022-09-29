@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from './../assets/images/logo.png';
 import CartWidget from './CartWidget';
 const categories = ['Hamburguesas', 'Bebidas', 'Ensaladas', 'Complementos', 'Postres'];
@@ -15,7 +15,7 @@ export function NavBar() {
             {
               categories.map((category, i) =>(
                 <li className="nav__item" key={i}>
-                  <a href="#" className={`nav__link ${i === 1 ? 'nav__link--active' : ''}`}>{category}</a>
+                  <NavLink to={`/categoria/${category.toLowerCase()}`} className={({ isActive }) => (`nav__link ${isActive ? 'nav__link--active': ''}`)}>{category}</NavLink>
                 </li>
               ))
             }

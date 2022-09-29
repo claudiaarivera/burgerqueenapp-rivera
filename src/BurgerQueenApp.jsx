@@ -11,7 +11,8 @@ export default function BurgerQueenApp() {
         <div className='container'>
           <Routes>
             <Route path='/' element={<ItemListContainer greeting="Nuestro menú"/>}></Route>
-            <Route path='/hamburguesas/:id' element={<ItemDetailContainer />}></Route>
+            <Route path='/:category/:id' element={<ItemDetailContainer />}></Route>
+            <Route path='/categoria/:category' element={<ItemListContainer />}></Route>
             
           </Routes>
         </div>

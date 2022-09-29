@@ -109,5 +109,65 @@ export const products = [
     category: 'hamburguesas',
     img: '/images/products/hamburger-1.jpg'
   },
+  {
+    id: 'ddb0b4c1-032e-48ba-b3c9-ebb233847504',
+    name: 'Sprite Sabor Original 150 ml',
+    description: 'Sprite Sabor Original 150 ml',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 4.9,
+    stock: 10,
+    category: 'bebidas',
+    img: '/images/products/drink-1.png'
+  },
+  {
+    id: 'd17374dc-21ca-4ce0-879e-13d6eb49c610',
+    name: 'Inca kola Sin Azúcar 500 ml',
+    description: 'Inca kola Sin Azúcar 500 ml',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 4.9,
+    stock: 10,
+    category: 'bebidas',
+    img: '/images/products/drink-2.png'
+  },
+  {
+    id: 'b4361159-0ba8-4b17-8af9-7d6b9ae90dac',
+    name: 'Ensalada 1',
+    description: 'Ensalada 1',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 8.9,
+    stock: 30,
+    category: 'ensaladas',
+    img: '/images/products/salad-1.jpg'
+  },
+  {
+    id: '95778103-43cc-4cf6-966a-e39525dddd7d',
+    name: 'Ensalada 2',
+    description: 'Ensalada 2',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 10.9,
+    stock: 15,
+    category: 'ensaladas',
+    img: '/images/products/salad-2.webp'
+  },
+  {
+    id: '95778103-44cc-4cf6-966a-e31525dedx7d',
+    name: 'Nuggets',
+    description: 'Nuggets 1',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 15.9,
+    stock: 10,
+    category: 'complementos',
+    img: '/images/products/side-1.jpg'
+  },
+  {
+    id: 'f4497752-659e-4b28-b90b-d312b607cac8',
+    name: 'Papas fritas',
+    description: 'Papas fritas 1',
+    nutritionFacts: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    price: 15.9,
+    stock: 10,
+    category: 'complementos',
+    img: '/images/products/side-2.webp'
+  },
  
 ]

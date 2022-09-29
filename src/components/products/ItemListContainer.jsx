@@ -1,17 +1,20 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { getProducts } from "../../services/api";
 import { ItemList } from "./ItemList";
 
 export default function ItemListContainer({ greeting }) {
   const [isLoading, setisLoading] = useState(false);
   const [productList, setProductList] = useState([]);
+  const { category } = useParams();
+  
   useEffect(() => {
     setisLoading(true);
-    getProducts().then((products)=>{
+    getProducts(category).then((products)=>{
       setisLoading(false);
       setProductList(products);
     })
-  }, []);
+  }, [category]);
   
   return (
     <>
@@ -21,7 +24,11 @@ export default function ItemListContainer({ greeting }) {
         isLoading ? 
           <div className="spinner"></div> :
           <section>
-            <ItemList products={productList}/>
+            {
+              productList.length === 0 
+                ?   <h1 className="text-center title">Lo siento, no hemos encontrado resultados 🔍</h1>
+                :   <ItemList products={productList}/>
+            }
           </section>
       }
       
