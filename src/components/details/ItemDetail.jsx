@@ -42,7 +42,9 @@ export const ItemDetail = ({detail}) => {
         </div>
         <div className='d-sm-flex justify-content-between text-center'>
           <ItemCount initialValue={1} stock={stock}/>
-          <button disabled={stock === 0} className='button button--primary mt-4 mt-sm-0'><span className='me-2'>Agregar a la orden</span>S/. {price}</button>
+          <button disabled={stock === 0} className='button button--primary mt-4 mt-sm-0'>
+            <span className='me-2'>Agregar a la orden</span>S/. {price}
+          </button>
         </div>
       </div>
     </div>

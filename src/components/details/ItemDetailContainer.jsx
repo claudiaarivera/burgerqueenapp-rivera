@@ -7,6 +7,7 @@ export const ItemDetailContainer = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [item, setItem] = useState({});
   const {id} = useParams();
+  
   useEffect(() => {
     setIsLoading(true);
     document.body.classList.add('detail-page');

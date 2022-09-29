@@ -2,10 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 //import classicBurger from '../assets/images/PngItem_39479.png';
 
-export const Item = ({name, price, stock, img, id, category}) => {
-  const handleAddToCart = ()=>{
-    alert('Tu combo ha sido añadido al carrito 🔥🍔');
-  }
+export const Item = ({name, price, img, id, category}) => {
+
   return (
    <article className='product-card'>
     <div className='product-card__top'>
