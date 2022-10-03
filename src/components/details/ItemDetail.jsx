@@ -3,10 +3,16 @@ import { AiFillHeart, AiOutlineHeart, AiOutlineInfoCircle } from 'react-icons/ai
 import { HiOutlineInformationCircle } from 'react-icons/hi';
 import { ItemCount } from '../ItemCount';
 import { Accordion } from '../accordion/Accordion';
+import { Link } from 'react-router-dom';
 
 export const ItemDetail = ({detail}) => {
   const {name, price, stock, img, description, nutritionFacts} = detail;
   const [isFav, setIsFav] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
+  const handleAddToCart = (count) =>{
+    //alert(`Ha agregado un producto ${count}`)
+    setIsAdded(true);
+  }
   return (
     <div className="row">
       <div className="col-12 col-md-6 col-lg-5 mb-4 mb-md-0">
@@ -40,12 +46,14 @@ export const ItemDetail = ({detail}) => {
             </div>
           </Accordion>
         </div>
-        <div className='d-sm-flex justify-content-between text-center'>
-          <ItemCount initialValue={1} stock={stock}/>
-          <button disabled={stock === 0} className='button button--primary mt-4 mt-sm-0'>
-            <span className='me-2'>Agregar a la orden</span>S/. {price}
-          </button>
-        </div>
+        {
+          isAdded 
+          ? <Link to="/carrito" className='button button--primary'>Finalizar compra</Link>
+          : <ItemCount initialValue={1} 
+                    stock={stock} 
+                    price={price} 
+                    onAddToCart={handleAddToCart}/>
+        }
       </div>
     </div>
   )
