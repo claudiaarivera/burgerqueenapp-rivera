@@ -4,6 +4,7 @@ import CartWidget from './CartWidget';
 const categories = ['Hamburguesas', 'Bebidas', 'Ensaladas', 'Complementos', 'Postres'];
 
 export function NavBar() {
+  
   return (
     <header className="header">
       <div className="container">
@@ -25,7 +26,7 @@ export function NavBar() {
               <a className='button button--primary button--outline' href="">Ingresar</a>
             </li>
             <li className='nav__item'>
-              <CartWidget count={1}/>
+              <CartWidget/>
             </li>
           </ul>
         </nav>

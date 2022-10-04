@@ -20,6 +20,6 @@ export const ItemDetailContainer = () => {
   return (
     isLoading 
     ? <div className="spinner"></div>
-    : <ItemDetail detail={item}/>
+    : <ItemDetail item={item}/>
   )
 }

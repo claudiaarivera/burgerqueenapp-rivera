@@ -1,17 +1,21 @@
 import { useState } from 'react';
-import { AiFillHeart, AiOutlineHeart, AiOutlineInfoCircle } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { HiOutlineInformationCircle } from 'react-icons/hi';
 import { ItemCount } from '../ItemCount';
 import { Accordion } from '../accordion/Accordion';
 import { Link } from 'react-router-dom';
+import { cartContext } from "../../context/cartContext";
+import { useContext } from "react";
 
-export const ItemDetail = ({detail}) => {
-  const {name, price, stock, img, description, nutritionFacts} = detail;
+export const ItemDetail = ({item}) => {
+  const {name, price, stock, img, description, nutritionFacts} = item;
   const [isFav, setIsFav] = useState(false);
-  const [isAdded, setIsAdded] = useState(false);
+  const [isAddCartButtonHide, setIsAddCartButtonHide] = useState(false);
+  const { cart, addItem } = useContext(cartContext);
   const handleAddToCart = (count) =>{
-    //alert(`Ha agregado un producto ${count}`)
-    setIsAdded(true);
+    alert(`Ha agregado un producto ${count}`)
+    setIsAddCartButtonHide(true);
+    //addItem({count, item});
   }
   return (
     <div className="row">
@@ -47,12 +51,13 @@ export const ItemDetail = ({detail}) => {
           </Accordion>
         </div>
         {
-          isAdded 
+          isAddCartButtonHide 
           ? <Link to="/carrito" className='button button--primary'>Finalizar compra</Link>
-          : <ItemCount initialValue={1} 
-                    stock={stock} 
-                    price={price} 
-                    onAddToCart={handleAddToCart}/>
+          : 
+            <ItemCount initialValue={1} 
+                        stock={stock} 
+                        price={price} 
+                        onAddToCart={handleAddToCart}/>
         }
       </div>
     </div>

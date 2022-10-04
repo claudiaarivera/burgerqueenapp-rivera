@@ -1,10 +1,15 @@
 import { BsFillHandbagFill } from 'react-icons/bs';
+import { cartContext } from "../context/cartContext";
+import { useContext } from "react";
 
-export default function CartWidget({count}) {
+export default function CartWidget() {
+  const { getTotalItems } = useContext(cartContext);
   return (
     <button className='button nav__link nav__link--cart count'>
         <BsFillHandbagFill size="1.5rem"/> 
-        <span className='count__num'>{ count }</span>  
+        {
+           getTotalItems() !== 0 && <span className='count__num'>{ getTotalItems()}</span>  
+        }
     </button>
   )
 }
