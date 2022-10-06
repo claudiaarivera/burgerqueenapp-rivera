@@ -10,12 +10,12 @@ import { useContext } from "react";
 export const ItemDetail = ({item}) => {
   const {name, price, stock, img, description, nutritionFacts} = item;
   const [isFav, setIsFav] = useState(false);
-  const [isAddCartButtonHide, setIsAddCartButtonHide] = useState(false);
-  const { cart, addItem } = useContext(cartContext);
+  /* const [isAddCartButtonHide, setIsAddCartButtonHide] = useState(false); */
+  const { cart, addItem, removeItem} = useContext(cartContext);
   const handleAddToCart = (count) =>{
-    alert(`Ha agregado un producto ${count}`)
-    setIsAddCartButtonHide(true);
-    //addItem({count, item});
+    /* alert(`Ha agregado un producto ${count}`)
+    setIsAddCartButtonHide(true); */
+    addItem({count, item});
   }
   return (
     <div className="row">
@@ -51,13 +51,14 @@ export const ItemDetail = ({item}) => {
           </Accordion>
         </div>
         {
-          isAddCartButtonHide 
+          /* isAddCartButtonHide 
           ? <Link to="/carrito" className='button button--primary'>Finalizar compra</Link>
-          : 
-            <ItemCount initialValue={1} 
-                        stock={stock} 
-                        price={price} 
-                        onAddToCart={handleAddToCart}/>
+          :  */
+          <ItemCount initialValue={1} 
+                      stock={stock} 
+                      price={price} 
+                      onAddToCart={handleAddToCart}/>
+
         }
       </div>
     </div>

@@ -10,7 +10,6 @@ const CartContextProvider = ({children}) => {
         if (cartItem.id === item.id) cartItem.count += count;
         return cartItem;
       });
-      console.log(newCart)
       setCart(newCart);
       return;
     }
@@ -18,19 +17,23 @@ const CartContextProvider = ({children}) => {
     setCart([...cart, newItem]);
     
   }
-  const getTotalItems = ()=>{
-    let counter = 0;
-    cart.forEach(({count})=> counter = counter + count);
-    return counter;
+  const getTotalItems = ()=> cart.reduce((acc, {count})=> acc + count, 0);
+
+  const removeItem = (itemId)=>{
+    const newCart = cart.filter(({id})=> id !== itemId);
+    setCart(newCart);
+  }
+  const clearCart = ()=>{
+    setCart([]);
   }
   const isItemInCart = (item)=> cart.some(({id})=> item.id === id);
-  useEffect(() => {
+  /* useEffect(() => {
     //getTotalItems();
     console.log(cart)
-  },[cart]);
+  }); */
   return (
  
-    <cartContext.Provider value={{cart, addItem, getTotalItems}}>
+    <cartContext.Provider value={{cart, addItem, getTotalItems, removeItem, clearCart}}>
       {children}
     </cartContext.Provider>
   )

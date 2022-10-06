@@ -4,7 +4,6 @@ import CartWidget from './CartWidget';
 const categories = ['Hamburguesas', 'Bebidas', 'Ensaladas', 'Complementos', 'Postres'];
 
 export function NavBar() {
-  
   return (
     <header className="header">
       <div className="container">
