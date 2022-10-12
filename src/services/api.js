@@ -1,9 +1,10 @@
 import { products } from "../data/products";
 
 export const getProducts = (category) => {
-  return new Promise((res)=>{
+  return new Promise((res, reject)=>{
     setTimeout(() => {
       const productList = products.filter((product)=> category ? product.category === category : product);
+      if (!productList.length) reject(new Error('No hemos encontrado resultados.'));
       res(productList);
     }, 1500);
   })
@@ -12,7 +13,7 @@ export const getProductById = (id)=>{
   return new Promise((res, reject)=>{
     setTimeout(() => {
       const product = products.find((product)=> product.id === id);
-      if (!product) reject('This product doesnt exist');
+      if (!product) reject(new Error('El producto no está disponible o no existe.'));
       res(product);
     }, 1500);
   })

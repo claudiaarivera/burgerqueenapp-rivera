@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-//import classicBurger from '../assets/images/PngItem_39479.png';
 
 export const Item = ({name, price, img, id, category}) => {
 

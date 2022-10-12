@@ -4,34 +4,45 @@ import { getProducts } from "../../services/api";
 import { ItemList } from "./ItemList";
 
 export default function ItemListContainer({ greeting }) {
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [productList, setProductList] = useState([]);
+  const [error, setError] = useState(null);
   const { category } = useParams();
   
   useEffect(() => {
-    setisLoading(true);
-    getProducts(category).then((products)=>{
-      setisLoading(false);
-      setProductList(products);
-    })
+    setIsLoading(true);
+    setError(null);
+    getProducts(category)
+      .then((products)=>{
+        setIsLoading(false);
+        setProductList(products);
+      })
+      .catch(({message})=> {
+        console.log()
+        console.log(message)
+        setError(message)
+      })
+      .finally(()=> setIsLoading(false));
   }, [category]);
-  
+
+  if (isLoading) {
+    return <div className="spinner"></div>
+  }
   return (
     <>
-      <h1 className="title">{ greeting }</h1>
-      
       {
-        isLoading ? 
-          <div className="spinner"></div> :
-          <section>
-            {
-              productList.length === 0 
-                ?   <h1 className="text-center title">Lo siento, no hemos encontrado resultados 🔍</h1>
-                :   <ItemList products={productList}/>
-            }
-          </section>
+        error
+        ? <h1 className="text-center title">{error}🔍</h1>
+        : (
+         <>
+            <h1  className="title">{ greeting }</h1>
+            <section>
+              <ItemList products={productList}/>
+            </section>
+         </> 
+        )
       }
-      
+     
     </>
   )
 }

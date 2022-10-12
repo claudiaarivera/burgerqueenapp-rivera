@@ -10,11 +10,10 @@ import { useContext } from "react";
 export const ItemDetail = ({item}) => {
   const {name, price, stock, img, description, nutritionFacts} = item;
   const [isFav, setIsFav] = useState(false);
-  /* const [isAddCartButtonHide, setIsAddCartButtonHide] = useState(false); */
-  const { cart, addItem, removeItem} = useContext(cartContext);
+  const [isItemInCart, setIsItemInCart] = useState(false);
+  const { addItem } = useContext(cartContext);
   const handleAddToCart = (count) =>{
-    /* alert(`Ha agregado un producto ${count}`)
-    setIsAddCartButtonHide(true); */
+    setIsItemInCart(true);
     addItem({count, item});
   }
   return (
@@ -51,10 +50,9 @@ export const ItemDetail = ({item}) => {
           </Accordion>
         </div>
         {
-          /* isAddCartButtonHide 
-          ? <Link to="/carrito" className='button button--primary'>Finalizar compra</Link>
-          :  */
-          <ItemCount initialValue={1} 
+          isItemInCart 
+          ? <div className='d-flex justify-content-end'><Link to="/carrito" className='button button--primary'>Finalizar compra</Link></div>
+          : <ItemCount initialValue={1} 
                       stock={stock} 
                       price={price} 
                       onAddToCart={handleAddToCart}/>
