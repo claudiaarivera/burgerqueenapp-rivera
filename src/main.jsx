@@ -7,6 +7,5 @@ import './assets/scss/styles.scss';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BurgerQueenApp />
-
   </React.StrictMode>
 )

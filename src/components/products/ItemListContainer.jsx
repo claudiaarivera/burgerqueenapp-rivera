@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../services/api";
+/* import { getProducts } from "../../services/api"; */
 import { ItemList } from "./ItemList";
+import { getProducts } from "./../../services/firestore";
 
 export default function ItemListContainer({ greeting }) {
   const [isLoading, setIsLoading] = useState(false);

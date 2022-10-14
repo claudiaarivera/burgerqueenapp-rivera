@@ -3,7 +3,7 @@ import { products } from "../data/products";
 export const getProducts = (category) => {
   return new Promise((res, reject)=>{
     setTimeout(() => {
-      const productList = products.filter((product)=> category ? product.category === category : product);
+      const productList = category ? products.filter((product)=> product.category === category) : products;
       if (!productList.length) reject(new Error('No hemos encontrado resultados.'));
       res(productList);
     }, 1500);
