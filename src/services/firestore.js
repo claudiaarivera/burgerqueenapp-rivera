@@ -69,7 +69,6 @@ export const getProductById = async (id)=>{
   }
 }
 export const addBuyOrder = async (order) =>{
-  console.log(order)
   try {
     const collectionRef = collection(firestore, 'orders');
     const doc = await addDoc(collectionRef, order);

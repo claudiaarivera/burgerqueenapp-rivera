@@ -17,4 +17,13 @@
     &:focus{
         border-color: var(--secondary-color);
     }
+    &.invalid{
+        border-color: var(--red);
+    }
+}
+.control-error-message{
+    margin: 0;
+    margin-top: 5px;
+    color: var(--red);
+    font-size: 0.875rem;
 }

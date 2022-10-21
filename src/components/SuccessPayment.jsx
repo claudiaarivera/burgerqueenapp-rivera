@@ -9,14 +9,14 @@ export const SuccessPayment = () => {
   useEffect(() => {
     if (!state) navigate('/');
   }, [])
-  
+  if (!state) return;
   return (
     <div className="d-flex justify-content-center">
       <div className="success-payment">
         <div className="success-payment__header">
           <h1 className="title success-payment__title">¡Felicidades 🎉!</h1>
           <p className="success-payment__description">Tu compra se realizó con éxito.</p>
-          <span className="success-payment__order-id">ID: <b>{state.orderId?.toUpperCase()}</b></span>
+          <span className="success-payment__order-id">ID: <b>{state.orderId.toUpperCase()}</b></span>
         </div>
         <div className="mb-5">
           <div className="row mb-3">

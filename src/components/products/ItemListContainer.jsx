@@ -19,8 +19,6 @@ export default function ItemListContainer({ greeting }) {
         setProductList(products);
       })
       .catch(({message})=> {
-        console.log()
-        console.log(message)
         setError(message)
       })
       .finally(()=> setIsLoading(false));
