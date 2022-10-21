@@ -1,6 +1,16 @@
 // Import the functions you need from the SDKs you need
+import { products } from './../data/products';
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
+import { 
+  getFirestore, 
+  collection, 
+  getDocs, 
+  doc, 
+  getDoc, 
+  query, 
+  where,
+  addDoc 
+} from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,7 +28,7 @@ const firestore = getFirestore(app);
 
 export const getProducts = async (cate)=>{
   try {
-    const collectionRef = collection(firestore, 'productos');
+    const collectionRef = collection(firestore, 'products');
     const qry = cate ? query(collectionRef, where('category', '==', cate)) : collectionRef; 
     const snapshot = await getDocs(qry);
     
@@ -43,7 +53,7 @@ export const getProducts = async (cate)=>{
 }
 export const getProductById = async (id)=>{
   try {
-    const docRef = doc(firestore, 'productos', id);  
+    const docRef = doc(firestore, 'products', id);  
     const docSnapshot = await getDoc(docRef);
     if (!docSnapshot.exists()) {
       throw new Error('El producto no está disponible o no existe.');
@@ -58,5 +68,34 @@ export const getProductById = async (id)=>{
     throw error;
   }
 }
+export const addBuyOrder = async (order) =>{
+  console.log(order)
+  try {
+    const collectionRef = collection(firestore, 'orders');
+    const doc = await addDoc(collectionRef, order);
+    if (!doc.id) {
+      throw new Error('Lo siento, no se ha podido generar la orden.');
+    }
+    return doc.id;
 
+  } catch (error) {
+    if (error.name === 'FirebaseError') {
+      throw new Error('Ha ocurrido un error inesperado, intenta refrescar la página.');
+    }
+    throw error;
+  }
+}
+export const exportProductsToFirebase = ()=>{
+  /* const productList = products.map(({id, ...product}) => product); */
+  products.forEach(async (product)=>{
+    delete product.id;
+    try {
+      const collectionRef = collection(firestore, 'products');
+      await addDoc(collectionRef, product);
+      
+    } catch (error) {
+      console.log(error)
+    }
+  });
+}
 /* export default firestore; */

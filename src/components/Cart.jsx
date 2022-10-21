@@ -69,7 +69,7 @@ export const Cart = () => {
                     <p className='col-auto mb-0 summary__price summary__price--total'>S/. {getTotalPrice()}</p>
                   </div>
                 </div>
-                <button className='button button--primary d-block w-100'>Ir a pagar</button>
+                <Link to="/checkout" className='button button--primary d-block w-100'>Ir a pagar</Link>
               </div>
             </div>
           </div>
