@@ -12,6 +12,19 @@ Al agregar un producto al carrito y dar clic en ‘Finalizar compra’ redirecci
 El botón ir a pagar redirecciona al formulario de pago donde. Al completar los campos y dar clic en Finalizar compra se registrará la orden con los datos del usuario proporcionados y el detalle de compra.
 Por último redireccionará a la página de pago exitoso donde se verá el resumen de compra con los datos correspondientes.
 
+## Instalación
+
+```bash
+# Clone this repository
+$ git clone https://github.com/claudiaarivera/burgerqueenapp-rivera.git
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm run dev
+```
+
 ## Dependencias
 
 ### Bootstrap
