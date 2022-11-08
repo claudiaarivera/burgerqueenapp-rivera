@@ -33,6 +33,8 @@ Para facilitar la maquetación se ha implementado bootstrap, en la raíz del pro
 
 [https://getbootstrap.com/docs/5.2/getting-started/contents/#compiled-bootstrap](https://getbootstrap.com/docs/5.2/getting-started/contents/#compiled-bootstrap)
 
+### Firebase
+
 ### SASS
 
 Preprocesador de CSS.
