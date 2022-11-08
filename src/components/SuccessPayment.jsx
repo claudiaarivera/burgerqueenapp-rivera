@@ -21,7 +21,6 @@ export const SuccessPayment = () => {
         setOrderDetail({...data, date: data.date.toDate().toLocaleDateString('es')});
       })
       .catch((err)=> {
-        console.log({err})
         setError(err.message)
       })
       .finally(()=> {
