@@ -6,6 +6,7 @@ import { Accordion } from '../accordion/Accordion';
 import { Link } from 'react-router-dom';
 import { cartContext } from "../../context/cartContext";
 import { useContext } from "react";
+import toast from 'react-hot-toast';
 
 export const ItemDetail = ({item}) => {
   const {name, price, stock, img, description, nutritionFacts} = item;
@@ -14,6 +15,16 @@ export const ItemDetail = ({item}) => {
   const { addItem } = useContext(cartContext);
   const handleAddToCart = (count) =>{
     setIsItemInCart(true);
+    toast('Has agregado un producto al carrito', {
+      duration: 2000,
+      position: 'bottom-center',
+      reverseOrder: true,
+      style: {
+        background: '#272727',
+        color: '#ffffff',
+        borderRadius: 25
+      }
+    })
     addItem({count, item});
   }
   return (

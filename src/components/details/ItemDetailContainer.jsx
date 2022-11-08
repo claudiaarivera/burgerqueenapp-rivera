@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom";
-/* import { getProductById } from "../../services/api"; */
 import { getProductById } from './../../services/firestore';
 import { ItemDetail } from "./ItemDetail";
 
@@ -14,7 +13,6 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     setIsLoading(true);
     setError(null);
-    document.body.classList.add('detail-page');
     getProductById(id)
       .then((data)=> setItem(data))
       .catch((err)=> setError(err.message))

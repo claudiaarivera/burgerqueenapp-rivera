@@ -35,4 +35,11 @@
         padding: 10px 15px;
         border-radius: 5px;
     }
+    &__buyer{
+        padding-bottom: 15px;
+        border-bottom: 1px solid var(--bs-gray-200);
+        margin-bottom: 20px;
+        color: var(--bs-gray-700);
+        font-size: 0.875rem;
+    }
 }

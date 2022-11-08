@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { createContext } from "react";
+import { useState, createContext } from "react";
 
 const cartContext = createContext();
 const CartContextProvider = ({children}) => {
@@ -36,12 +35,8 @@ const CartContextProvider = ({children}) => {
     setCart([]);
   }
   const isItemInCart = (item)=> cart.some(({id})=> item.id === id);
-  /* useEffect(() => {
-    //getTotalItems();
-    console.log(cart)
-  }); */
+  
   return (
- 
     <cartContext.Provider value={{cart, addItem, getTotalItems, removeItem, clearCart, getTotalPrice}}>
       {children}
     </cartContext.Provider>

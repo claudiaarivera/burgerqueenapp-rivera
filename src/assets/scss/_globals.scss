@@ -65,3 +65,18 @@ img{
 .text-center{
     text-align: center;
 }
+.fw-semibold{
+    font-weight: 600;
+}
+.fw-bold{
+    font-weight: 700;
+}
+.color-default{
+    color: var(--default-color);
+}
+.fsize-small{
+    font-size: 0.875rem;
+}
+.color-red{
+    color: var(--red);
+}

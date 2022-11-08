@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { products } from './../data/products';
 import { initializeApp } from "firebase/app";
 import { 
@@ -12,7 +11,6 @@ import {
   addDoc 
 } from 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDG8nCWeLApY50WUriJ9rFIeptzgVuWqpI",
   authDomain: "burgerqueen-app-7915d.firebaseapp.com",
@@ -39,7 +37,6 @@ export const getProducts = async (cate)=>{
     if (data.length === 0) {
       throw new Error('No hemos encontrado resultados.');
     }
-    /* console.log(data) */
     return data;
   } catch (error) {
     if (error.name === 'FirebaseError') {
@@ -47,9 +44,6 @@ export const getProducts = async (cate)=>{
     }
     throw error;
   }
-
-  
-
 }
 export const getProductById = async (id)=>{
   try {
@@ -58,7 +52,6 @@ export const getProductById = async (id)=>{
     if (!docSnapshot.exists()) {
       throw new Error('El producto no está disponible o no existe.');
     }
-
     return {...docSnapshot.data(), id: docSnapshot.id};
 
   } catch (error) {
@@ -84,8 +77,24 @@ export const addBuyOrder = async (order) =>{
     throw error;
   }
 }
+export const getOrder = async (id) => {
+  try {
+    const docRef = doc(firestore, 'orders', id);  
+    const docSnapshot = await getDoc(docRef);
+    if (!docSnapshot.exists()) {
+      throw new Error('Ha ocurrido un error al cargar los datos de la orden.');
+    }
+
+    return {...docSnapshot.data(), id: docSnapshot.id};
+
+  } catch (error) {
+    if (error.name === 'FirebaseError') {
+      throw new Error('Ha ocurrido un error inesperado, intenta refrescar la página.');
+    }
+    throw error;
+  }
+}
 export const exportProductsToFirebase = ()=>{
-  /* const productList = products.map(({id, ...product}) => product); */
   products.forEach(async (product)=>{
     delete product.id;
     try {
@@ -97,4 +106,3 @@ export const exportProductsToFirebase = ()=>{
     }
   });
 }
-/* export default firestore; */

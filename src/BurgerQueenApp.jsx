@@ -7,6 +7,8 @@ import CartContextProvider from './context/cartContext';
 import { BrowserRouter } from "react-router-dom";
 import { Checkout } from './components/Checkout';
 import { SuccessPayment } from './components/SuccessPayment';
+import { NotFoundPage } from './components/NotFoundPage';
+import { Toaster } from 'react-hot-toast';
 
 export default function BurgerQueenApp() {
   return (
@@ -23,8 +25,11 @@ export default function BurgerQueenApp() {
                 <Route path='/carrito' element={<Cart />}></Route>
                 <Route path='/checkout' element={<Checkout />}></Route>
                 <Route path='/checkout/pago-exitoso' element={<SuccessPayment />}></Route>
+                <Route path='*' element={<NotFoundPage />}></Route>
+
               </Routes>
             </div>
+            <Toaster />
           </main>
         </BrowserRouter>
       </CartContextProvider>

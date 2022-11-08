@@ -4,10 +4,23 @@ import { cartContext } from './../context/cartContext';
 import cartIcon from '../assets/images/bread.png';
 import { Link } from 'react-router-dom';
 import { FiTrash2 } from 'react-icons/fi';
+import toast from 'react-hot-toast';
 
 export const Cart = () => {
   const {cart, removeItem, getTotalItems, clearCart, getTotalPrice} = useContext(cartContext);
-
+  const handleRemoveItem = (id) =>{
+    toast('Has eliminado un producto del carrito', {
+      duration: 2000,
+      position: 'bottom-center',
+      reverseOrder: true,
+      style: {
+        background: '#272727',
+        color: '#ffffff',
+        borderRadius: 25
+      }
+    });
+    removeItem(id);
+  }
   return (
     <div className='cart'>
       <h1 className="title">Carrito</h1>
@@ -41,7 +54,7 @@ export const Cart = () => {
                         <span className='cart__product-price'>S/. {amount}</span>
                       </div>
                       <div className='col-auto'>
-                        <button className='button cart__button cart__remove-item-btn' onClick={()=> removeItem(id)}>Eliminar</button>
+                        <button className='button cart__button cart__remove-item-btn' onClick={()=> handleRemoveItem(id)}>Eliminar</button>
                       </div>
                     </div>  
                   </div>
@@ -72,6 +85,7 @@ export const Cart = () => {
                 <Link to="/checkout" className='button button--primary d-block w-100'>Ir a pagar</Link>
               </div>
             </div>
+           
           </div>
         )
       }

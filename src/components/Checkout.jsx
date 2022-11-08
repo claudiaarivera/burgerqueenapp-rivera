@@ -37,7 +37,7 @@ export const Checkout = () => {
     if (cart.length === 0) navigate('/');
   }, []);
   
-  
+  if (cart.length === 0) return;
   return (
     <div className="checkout row">
       <div className="col-12 col-md-4">
