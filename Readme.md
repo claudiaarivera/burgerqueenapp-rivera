@@ -8,6 +8,7 @@ En la **página principal** se puede visualizar todo el catálogo de productos q
 
 Se puede navegar desde el menú a las otras **categorías** ya mencionadas, donde se muestra nuevamente la lista de catálogo según la categoría seleccionada.
 Al agregar un producto al carrito y dar clic en ‘Finalizar compra’ redireccionará a la página de **carrito** donde se puede ver el detalle de la orden, quitar elemenetos del carrito y vaciar el carrito.
+
 El botón ir a pagar redirecciona al formulario de pago donde. Al completar los campos y dar clic en Finalizar compra se registrará la orden con los datos del usuario proporcionados y el detalle de compra.
 Por último redireccionará a la página de pago exitoso donde se verá el resumen de compra con los datos correspondientes.
 
