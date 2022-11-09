@@ -11,11 +11,9 @@ export const Checkout = () => {
   const navigate = useNavigate(); 
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  useEffect(() => {
-    setError(null)
-  }, [])
-  
+
   const handleCheckout = (data) =>{
+    setError(null);
     setIsSubmitting(true);
     const buyOrder = {
       buyer: data,
